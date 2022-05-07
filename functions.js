@@ -58,6 +58,7 @@ export function putSign() {
   }
   document.getElementById('os').textContent = info.os[lang / 2];
   document.getElementById('switcher').textContent = info.switcher[lang / 2];
+  document.getElementById('link').textContent = info.link[lang / 2];
 }
 
 export function changeLang() {
@@ -153,6 +154,19 @@ export function createBackground() {
   body.appendChild(container);
   body.appendChild(os);
   body.appendChild(switcher);
+}
+
+export function createFooter() {
+  const footer = document.createElement('footer');
+  footer.classList.add('footer');
+  footer.innerHTML = `
+  <svg class="logo">
+  <use xlink:href="./svg.svg#github">
+  </use>
+  </svg>  
+  <a href="https://github.com/Gri12388/virtual-keyboard/tree/master" target="_blank" class="link" id="link"></a>
+  `;
+  document.querySelector('body').appendChild(footer);
 }
 
 export function delNext() {

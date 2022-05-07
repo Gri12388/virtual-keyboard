@@ -1,5 +1,6 @@
 import {
   createBackground,
+  createFooter,
   keyDown,
   keyUp,
   monitorTextArea,
@@ -10,6 +11,7 @@ import {
 } from './functions.js';
 
 createBackground();
+createFooter();
 
 if (!localStorage.getItem('langgri12388060522')) localStorage.setItem('langgri12388060522', '0');
 
