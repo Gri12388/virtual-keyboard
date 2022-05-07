@@ -1,0 +1,148 @@
+@keyframes blink {
+  0% {
+    background-color: black;
+  }
+  49%{
+    background-color: black;
+  }
+  51% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+p {
+  cursor: default;
+}
+
+span, pre{
+  display: inline-block;
+}
+
+.container {
+  width: 915px;
+  height: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px 0 10px 10px;
+  border: solid 2px black;
+  border-radius: 10px;
+  background-color: grey;
+}
+
+.textarea {
+  overflow-y: auto;
+  width: 99%;
+  height: 300px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: solid 2px black;
+  font-size: 2rem;
+  color: black;
+  background-color: white;
+  cursor: text;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: fit-content;
+  padding: 10px 0 0 0;
+  background-color: grey;
+}
+
+.key, .lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.grey {
+  background-color: #333333;
+}
+
+.lang {
+  border: solid 1px black;
+  color: black;
+  background-color: white;
+  cursor: default;
+}
+
+.space {
+  width: 410px;
+  background-color: #333333;
+}
+
+.key:hover {
+  background-color: green;
+}
+
+.square_pressed {
+  background-color: green;
+  border-radius: 50%;
+  transition: .2s;
+}
+
+.rect_pressed {
+  background-color: green;
+  border-radius: 20px;
+  transition: .2s;
+}
+
+#Backspace, 
+#CapsLock, 
+#Enter, 
+#ShiftLeft,
+#ShiftRight {
+  width: 110px;
+}
+
+#Backspace, 
+#Tab, 
+#Delete, 
+#CapsLock, 
+#Enter, 
+#ShiftLeft,
+#ShiftRight,
+#ControlLeft,
+#AltLeft,
+#ControlRight,
+#AltRight, 
+#lang {
+  font-size: 1.2rem;
+}
+
+#CapsLock.on {
+  color: red;
+}
+
+#textcursor {
+  height: 2rem;
+  width: 1px;
+  background-color: black;
+  animation-name: blink;
+  animation-duration: .5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.info {
+  padding-top: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+
