@@ -6,8 +6,8 @@ const info = new Info();
 
 let element;
 
-const regAlt = /Alt(Left)|(Right)/;
-const regShift = /Shift(Left)|(Right)/;
+const regAlt = /Alt((Left)|(Right))/;
+const regShift = /Shift((Left)|(Right))/;
 
 let lang = +localStorage.getItem('langgri12388060522');
 let capsLock = 0;
@@ -40,6 +40,14 @@ export function changeCase() {
 
 export function showLang() {
   document.getElementById('lang').textContent = lang === 0 ? 'Eng' : 'Rus';
+}
+
+export function clearSelection() {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges();
+  } else {
+    document.selection.empty();
+  }
 }
 
 export function putSign() {
@@ -322,13 +330,15 @@ export function monitorTextArea(e) {
 }
 
 export function mouseDown(e) {
+  clearSelection();
   element = e.currentTarget;
   if (e.currentTarget.classList.contains('square')) e.currentTarget.classList.add('square_pressed');
   else e.currentTarget.classList.add('rect_pressed');
   makeChoice(e.currentTarget.id, false);
 }
 
-export function mouseUp() {
+export function mouseUp(e) {
+  e.preventDefault;
   if (element !== undefined && element !== null) {
     if (element.classList.contains('square')) element.classList.remove('square_pressed');
     else element.classList.remove('rect_pressed');
