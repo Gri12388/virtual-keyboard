@@ -338,7 +338,7 @@ export function mouseDown(e) {
 }
 
 export function mouseUp(e) {
-  e.preventDefault;
+  e.preventDefault();
   if (element !== undefined && element !== null) {
     if (element.classList.contains('square')) element.classList.remove('square_pressed');
     else element.classList.remove('rect_pressed');
